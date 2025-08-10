@@ -1,0 +1,15 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: npm install --workspaces
+    - name: Build frontend
+      run: npm run build --workspace=web
+    - name: Build backend
+      run: npm run build --workspace
