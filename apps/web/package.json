@@ -1,0 +1,1 @@
+{"name":"web","version":"1.0.0","private":true,"dependencies":{"next":"latest","react":"latest","react-dom":"latest","tailwindcss":"latest"},"devDependencies":{"typescript":"latest","postcss":"latest","autoprefixer":"latest"},"scripts":{"dev":"next dev","build":"next build","start":"next start"}}
