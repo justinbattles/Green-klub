@@ -1,1 +1,0 @@
-{"projects": [{"src": "apps/web","use": "@vercel/static-build","config": { "distDir": "dist" }},{"src": "apps/api","use": "@vercel/node"}}]}
