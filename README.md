@@ -1,37 +1,42 @@
-# Green Klub
-
-Premium Cannabis Microbusiness Website  
-Full-stack, mobile-first site for education, cultivation, and product sales.
+# Green Klub Monorepo
 
 ## Structure
 
-- **Frontend:** Next.js + Tailwind CSS (`apps/web`)
-- **Backend:** Node.js + Express (`apps/api`)
-- **Database:** PostgreSQL (Prisma ORM, `prisma`)
-- **CMS:** Sanity/Strapi (to be added)
-- **Hosting:** Vercel (frontend), Render/Supabase (backend)
+- `apps/api` – Express + Prisma backend
+- `apps/web` – React + Vite frontend
 
-## Getting Started
+## Local Development
 
-### Frontend
+1. **Install dependencies:**  
+   Run `npm install` from the root.
 
-```sh
-cd apps/web
-npm install
-npm run dev
-```
+2. **Backend:**  
+   - Add your `.env` file in `apps/api` (see sample).
+   - Run migrations (if using Prisma):  
+     `cd apps/api && npm run prisma:migrate`
+   - Start backend:  
+     `npm run dev --workspace=api`  
+     (Runs on `localhost:5000`)
 
-### Backend
+3. **Frontend:**  
+   - Start frontend:  
+     `npm run dev --workspace=web`  
+     (Runs on `localhost:5173`)
 
-```sh
-cd apps/api
-npm install
-npm run dev
-```
+## Deployment
 
-### Database
+- Recommended: [Vercel](https://vercel.com/) (both frontend & backend)
+- Alternative: Netlify (frontend) + Railway/Fly.io (backend)
 
-Configure PostgreSQL connection in `.env` and run:
-```sh
-npx prisma migrate dev
-```
+## Environment Variables
+
+- `.env` in `apps/api` for backend settings
+
+## Database
+
+- Use PostgreSQL; set your connection string in `.env`
+- Run migrations with `npm run prisma:migrate` in `apps/api`
+
+## CI/CD
+
+- See `.github/workflows/deploy.yml` to README.md.
