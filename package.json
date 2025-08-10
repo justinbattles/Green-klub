@@ -1,0 +1,1 @@
+{"name":"api","version":"1.0.0","private":true,"main":"index.ts","scripts":{"dev":"ts-node-dev --respawn index.ts","build":"tsc","start":"node build/index.js"},"dependencies":{"express":"latest","cors":"latest","dotenv":"latest","@prisma/client":"latest"},"devDependencies":{"typescript":"latest","ts-node-dev":"latest","@types/express":"latest","@types/node":"latest"}}
